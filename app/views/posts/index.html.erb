@@ -18,6 +18,8 @@
         <td><%= post.content.html_safe %></td>
         <td><%= link_to "upvote", like_post_path(post), method: :put %></td>
         <td><%= post.get_upvotes.size %></td>
+        <td><%= link_to "downvote", dislike_post_path(post), method: :put %></td>
+        <td><%= post.get_downvotes.size %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -29,3 +31,8 @@
 <br>
 
 <%= link_to 'New Post', new_post_path %>
+<% if user_signed_in? %>
+            <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+          <% else %>
+            <li><%= link_to('Login', new_user_session_path)  %></li>
+          <% end %>
