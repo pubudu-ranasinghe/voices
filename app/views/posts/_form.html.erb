@@ -19,6 +19,13 @@
     <%= f.label :content %><br>
     <%= f.text_area :content %>
   </div>
+  <div class="field">
+    <%= hidden_field_tag "post[minister_ids][]", nil %>
+      <% Minister.all.each do |minister| %>
+        <%= check_box_tag "post[minister_ids][]", minister.id, @post.minister_ids.include?(minister.id), id: dom_id(minister) %>
+        <%= label_tag dom_id(minister), minister.email %><br>
+      <% end %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
