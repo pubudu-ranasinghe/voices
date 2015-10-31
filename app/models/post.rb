@@ -3,6 +3,7 @@ class Post < ActiveRecord::Base
 
   has_many :taggings
   has_many :ministers, through: :taggings
+  belongs_to :category
 
   acts_as_votable
 

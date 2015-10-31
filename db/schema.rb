@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151031202450) do
+ActiveRecord::Schema.define(version: 20151031202301) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "ministers", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -40,7 +47,10 @@ ActiveRecord::Schema.define(version: 20151031202450) do
     t.string   "cover_content_type"
     t.integer  "cover_file_size"
     t.datetime "cover_updated_at"
+    t.integer  "category_id"
   end
+
+  add_index "posts", ["category_id"], name: "index_posts_on_category_id"
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "minister_id"
@@ -65,8 +75,6 @@ ActiveRecord::Schema.define(version: 20151031202450) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "fname"
-    t.string   "lname"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
