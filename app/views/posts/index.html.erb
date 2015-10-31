@@ -15,7 +15,7 @@
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.title %></td>
-        <td><%= post.content %></td>
+        <td><%= post.content.html_safe %></td>
         <td><%= link_to "upvote", like_post_path(post), method: :put %></td>
         <td><%= post.get_upvotes.size %></td>
         <td><%= link_to 'Show', post %></td>
