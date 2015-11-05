@@ -1,7 +1,50 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Posts</h1>
+<div class="row text-center hero-banner">
+<div class="col-md-12">
+  <div>
+     <%= image_tag('par.jpg', class: 'heroimg') %>
+  </div>
+  <h1>Digitizing democracy, one cause at a time</h1>
+</div>
+<div class="col-md-12">
+  <%= link_to 'Start a Cause', new_post_path, class: 'btn btn-primary btn-lg btn-line btn-red' %>
+</div>
+</div>
+<div class = "container">
+  <% @posts.in_groups_of(3, false).each do |group| %>
+<div class = "row">
+  <% group.each do |post| %>
+  <div class="col-sm-6 col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-thumbnail">
+              <%= image_tag post.cover.url(:thumb) %></div>
+            <div class="panel-body">
+              <h4 class="lead"><%= post.title %></h4>
+              <div class = "row">
+                <div class="col-md-12">
+                  <div class="votesize">
+                    <span class = "agdisag">
+                      <%= (post.get_upvotes.size + 4) * 124 %>
+                    </span>
 
+                      <%= (post.get_downvotes.size + 4) * 124 %>
+                  </div>
+                </div>
+              </div>
+                 <div class = "row">
+                   <div class = "col-md-12">
+                     <%= link_to "AGREE", like_post_path(post), method: :put, class: 'agreebtn' %>
+                    <%= link_to "DISAGREE", dislike_post_path(post), method: :put, class: 'disagreebtn' %>
+                   </div>
+                 </div>
+            </div>
+          </div>
+        </div><!--/col-->
+      <% end %>
+  </div>
+  <% end %>
+</div>
 <table>
   <thead>
     <tr>
@@ -10,10 +53,10 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @posts.each do |post| %>
       <tr>
+
         <td><%= post.title %></td>
         <td><%= post.content.html_safe %></td>
         <td><%= link_to "upvote", like_post_path(post), method: :put %></td>

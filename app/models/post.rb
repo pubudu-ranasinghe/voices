@@ -8,6 +8,13 @@ class Post < ActiveRecord::Base
 
   acts_as_votable
 
-  has_attached_file :cover, styles: { medium: "1200x500#", thumb: "300x250#" }, default_url: "/images/:style/missing.png"
-  validates_attachment_content_type :cover, content_type: /\Aimage\/.*\Z/
+  has_attached_file :cover,
+                     :styles => {
+                       :hero => "1150x420#",
+                       :thumb => "350x300#" },
+                     :convert_options => {
+                       :hero => "-strip",
+                       :thumb => "-quality 95 -strip -gravity center" },
+                     :default_url => "/images/:style/missing.png"
+     validates_attachment_content_type :cover, content_type: /\Aimage\/.*\Z/
 end

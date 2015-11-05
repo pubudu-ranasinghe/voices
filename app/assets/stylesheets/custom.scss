@@ -1,0 +1,149 @@
+$fonts: 'Work Sans', sans-serif;
+$font-black: #222;
+$font-grey: #6C6F73;
+$red: #D32F2F;
+$red-dark: #C12E1E;
+$red-light: #E04E3E;
+$grey: #bbb;
+$grey-light: #FAFAFA;
+$grey-dark: #888;
+$font-sizeaggree: 17px;
+h1, h2, h3, h4, h5, h6 {
+  font-family: $fonts;
+  font-weight: 700;
+  color: $font-black;
+  text-rendering: optimizelegibility;
+}
+
+p, div {
+  font-family: $fonts;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.6;
+  color: $font-grey;
+}
+
+a {
+  color: $red;
+}
+
+a:hover {
+  color: $red-dark;
+}
+body{
+  background-color: #F8F8F8;
+}
+
+
+.navbar-custom {
+  background-color: #fff;
+  border-bottom: none;
+  margin-bottom: -10px;
+
+  .navbar-brand {
+    padding-top: 10px;
+    // padding-bottom: 20px;
+    img { height: 50px; }
+  }
+  .navbar-nav {
+    li {
+      a {
+        padding-top: 25px;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        border-bottom: 3px solid #fff;
+        transition: border-color .3s ease;
+      }
+      a:hover {
+        border-color: $red;
+      }
+    }
+  }
+}
+.hero-banner {
+  margin-bottom: 80px;
+  text-align: center;
+  background-color: #fff;
+  margin-top: 0px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+
+  h1 {
+    font-weight: 300;
+    font-size: 42px;
+    line-height: 1.6;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+
+}
+.heroimg{
+  text-align: center;
+   opacity: 1;
+
+}
+.btn-line {
+  border: 2px solid $red;
+  background-color: #fff;
+  color: $red;
+  border-radius: 5px;
+}
+
+.btn-custom {
+  border: none;
+}
+
+.btn-red {
+  // background-color: $red;
+  // box-shadow: inset 0px -3px 0px 0px $red-dark;
+  transition: background-color .3s ease;
+}
+
+.btn-red:hover, .btn-red:focus {
+  background-color: $red-light;
+  border-color: $red-light;
+}
+
+.panelarea {
+  padding: 20px 20px 30px 20px;
+}
+.panel{
+  width : 350px;
+  padding-right: 2px;  padding-left: 2px;
+  border: 0px;
+}
+
+.panel-thumbnail{
+    width : 350px;
+    height : 300px;;
+
+}
+.panel-body {
+p{
+  text-align: left;
+  font-weight: 200;
+}
+h4{
+  text-align: left;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+}
+
+.agreebtn{
+  font-size: $font-sizeaggree;
+  padding-right: 20px;
+}
+.disagreebtn{
+  font-size: $font-sizeaggree;
+  padding-left: 20px;
+}
+.votesize{
+  font-size: 20px;
+  padding-right: 20px;
+}
+.agdisag{
+  padding-right: 70px;
+  padding-left: 10px;
+}
