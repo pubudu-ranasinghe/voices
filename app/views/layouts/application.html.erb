@@ -30,8 +30,13 @@
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to 'Start a Cause', new_post_path, class: 'red-link' %></li>
             <li><a href="#">Explore</a></li>
+            <% if minister_signed_in? %>
+              <li><%= link_to 'Dashboard', new_post_path, class: 'red-link' %></li>
+            <% end %>
             <% if user_signed_in? %>
               <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+            <% elsif minister_signed_in? %>
+              <li><%= link_to('Logout', destroy_minister_session_path, :method => :delete) %></li>
             <% else %>
               <li><%= link_to('Login', new_user_session_path)  %></li>
             <% end %>
