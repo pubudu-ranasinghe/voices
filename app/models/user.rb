@@ -8,6 +8,5 @@ class User < ActiveRecord::Base
 
   acts_as_voter
 
-  validates :fname, presence: true
-  validates :lname, presence: true
+
 end
