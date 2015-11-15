@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'posts#index'
 
+  get 'dashboard' => 'dashboard#index', as: "minister_dashboard"
+
   resources :posts do
   member do
     put "like", to: "posts#upvote"

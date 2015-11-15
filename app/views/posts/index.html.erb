@@ -20,7 +20,7 @@
             <div class="panel-thumbnail">
               <%= image_tag post.cover.url(:thumb) %></div>
             <div class="panel-body">
-              <h4 class="lead"><%= post.title %></h4>
+              <h4 class="lead"><%= link_to post.title, post %></h4>
               <div class = "row">
                 <div class="col-md-12">
                   <div class="votesize">

@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Welcome, <%= @minister.email %>!</h3>
+      <ul>
+      <% @posts.each do |post| %>
+        <li><%= post.title %></li>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8">
+      <h2>Causes you have been tagged</h2>
+    </div>
+  </div>
+
+  <!-- <div class="row">
+    <div class="col-md-8"> -->
+
+  <% @posts.in_groups_of(3, false).each do |group| %>
+    <div class = "row">
+      <% group.each do |post| %>
+        <div class="col-sm-6 col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-thumbnail">
+              <%= image_tag post.cover.url(:thumb) %>
+            </div>
+            <div class="panel-body">
+              <h4 class="lead"><%= post.title %></h4>
+              <!-- <div class = "row">
+                <div class="col-md-12">
+                  <div class="votesize">
+
+                  </div>
+                </div>
+              </div> -->
+              <!-- <div class="row">
+                <div class="col-md-12">
+                  <%= link_to "AGREE", like_post_path(post), method: :put, class: 'agreebtn' %>
+                  <%= link_to "DISAGREE", dislike_post_path(post), method: :put, class: 'disagreebtn' %>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
+    <!-- </div>
+  </div> -->
+
+</div>

@@ -31,7 +31,7 @@
             <li><%= link_to 'Start a Cause', new_post_path, class: 'red-link' %></li>
             <li><a href="#">Explore</a></li>
             <% if minister_signed_in? %>
-              <li><%= link_to 'Dashboard', new_post_path, class: 'red-link' %></li>
+              <li><%= link_to 'Dashboard', minister_dashboard_path, class: 'red-link' %></li>
             <% end %>
             <% if user_signed_in? %>
               <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
