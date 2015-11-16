@@ -51,6 +51,7 @@
 			color: #2C3E50;
 			font-size: 13px;
 		}
+		#msform .form-control { width: 100%; }
 		/*buttons*/
 		#msform .action-button {
 			width: 150px;
@@ -198,7 +199,7 @@
   <div class="form-group">
     <h3 class="">What is your cause?</h3>
     <p>Describe the specific cause you want to voice out. This will become the headline that can attract attention in an instant.</p>
-    <%= f.text_field :title, input_html: {class: 'form-control'}%>
+    <%= f.text_field :title, class: 'form-control'%>
   </div>
 
   <div class="form-group">
@@ -239,7 +240,7 @@
   <input type="button" name="previous" class="previous action-button" value="Previous" />
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit  class: 'btn btn-primary btn-lg btn-block'  %>
   </div>
 </fieldset>
 
