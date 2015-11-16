@@ -17,42 +17,31 @@
 </div>
 
 <div class="container">
-
-<div class="row">
-  <div class="col-md-12 text-center section-title">
-    <h4>Trending Causes</h4>
+  <div class="row">
+    <div class="col-md-12 text-center section-title">
+      <h4>Trending Causes</h4>
+    </div>
   </div>
-</div>
 
-  <% @posts.in_groups_of(3, false).each do |group| %>
-    <div class = "row">
+  <% @posts.in_groups_of(4, false).each do |group| %>
+    <div class="row">
       <% group.each do |post| %>
-        <div class="col-sm-6 col-md-4">
-          <div class="panel panel-default">
-            <div class="panel-thumbnail">
-              <%= image_tag post.cover.url(:thumb) %>
-            </div>
-            <div class="panel-body">
-              <h4 class="lead"><%= link_to post.title, post %></h4>
-              <div class = "row">
-                <div class="col-md-12">
-                  <div class="votesize">
-                    <span class = "agdisag">
-                      <%= (post.get_upvotes.size + 4) * 124 %>
-                    </span>
-                      <%= (post.get_downvotes.size + 4) * 124 %>
-                  </div>
-                </div>
-              </div>
-             <div class = "row">
-               <div class = "col-md-12">
-                 <%= link_to "AGREE", like_post_path(post), method: :put, class: 'agreebtn' %>
-                <%= link_to "DISAGREE", dislike_post_path(post), method: :put, class: 'disagreebtn' %>
-               </div>
-             </div>
+        <div class="col-xs-4 col-sm-3">
+          <div class="card">
+            <% if post.cover.exists? %>
+              <%= image_tag post.cover.url(:thumb), class: 'card-img-top card-img-full' %>
+            <% end %>
+            <div class="card-block">
+              <!-- <a href="#" class="card-link-full"></a> -->
+              <%= link_to(post) do %>
+                <h3 class="card-title"><%= post.title %></h3>
+              <% end %>
+              <p class="card-text"><%= (post.get_upvotes.size + 4) * 124 %>-<%= (post.get_downvotes.size + 4) * 124 %></p>
+              <!-- <%= button_to "AGREE", like_post_path(post), method: :put, class: 'btn btn-primary' %> -->
+              <!-- <%= button_to "DISAGREE", dislike_post_path(post), method: :put, class: 'btn btn-primary' %> -->
             </div>
           </div>
-        </div><!--/col-->
+        </div>
       <% end %>
     </div>
   <% end %>

@@ -1,10 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'devise'
-gem 'acts_as_votable', '~> 0.10.0'
-gem "paperclip", "~> 4.3"
-gem 'trix'
-gem 'bootstrap-sass', '~> 3.3.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
@@ -36,6 +31,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+gem 'devise'
+gem 'acts_as_votable', '~> 0.10.0'
+gem "paperclip", "~> 4.3"
+gem 'trix'
+gem 'bootstrap-sass', '~> 3.3.5'
+
+gem 'activeadmin', '~> 1.0.0.pre2'
 
 # windows fix
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
