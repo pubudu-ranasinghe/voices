@@ -34,6 +34,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'acts_as_votable', '~> 0.10.0'
 gem "paperclip", "~> 4.3"
+gem 'aws-sdk'
 gem 'trix'
 gem 'bootstrap-sass', '~> 3.3.5'
 
