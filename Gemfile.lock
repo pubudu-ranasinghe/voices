@@ -138,6 +138,7 @@ GEM
       mimemagic (= 0.3.0)
     polyamorous (1.2.0)
       activerecord (>= 3.0)
+    puma (2.15.3)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -230,6 +231,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   paperclip (~> 4.3)
+  puma
   rails (= 4.2.4)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
