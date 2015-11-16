@@ -41,8 +41,8 @@
                 <h3 class="card-title"><%= post.title %></h3>
               <% end %>
               <p class="card-text"><%= (post.get_upvotes.size + 4) * 124 %>-<%= (post.get_downvotes.size + 4) * 124 %></p>
-              <!-- <%= button_to "AGREE", like_post_path(post), method: :put, class: 'btn btn-primary' %> -->
-              <!-- <%= button_to "DISAGREE", dislike_post_path(post), method: :put, class: 'btn btn-primary' %> -->
+              <%= button_to "AGREE", like_post_path(post), method: :put, class: 'btn btn-primary' %> 
+              <%= button_to "DISAGREE", dislike_post_path(post), method: :put, class: 'btn btn-primary' %>
             </div>
           </div>
         </div>
