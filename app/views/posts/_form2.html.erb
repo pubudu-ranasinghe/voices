@@ -12,6 +12,7 @@
 		/*basic reset*/
 		* {margin: 0; padding: 0;}
 
+		.footer { display: none; }
 		/*form styles*/
 		#msform {
 			width: 900px;
@@ -44,7 +45,7 @@
 			border-radius: 3px;
 			margin-bottom: 20px;
       margin-top: 20px;
-			width: 100%;
+			/*width: 100%;*/
 			box-sizing: border-box;
 			font-family: montserrat;
 			color: #2C3E50;
@@ -222,13 +223,17 @@
 </fieldset>
 <fieldset>
   <div class="field">
+		<h3 class="">Add a photo to your cause.</h3>
+    <p>You can add a relevant photo to visually describe your cause.</p>
     <%= f.file_field :cover %>
   </div>
   <div class="field">
+		<h3 class="">Who should address this cause?</h3>
+    <p>You can tag upto two members of the parliament to your cause. They will be notified of this to take further action.</p>
     <%= hidden_field_tag "post[minister_ids][]", nil %>
     <% Minister.all.each do |minister| %>
       <%= check_box_tag "post[minister_ids][]", minister.id, @post.minister_ids.include?(minister.id), id: dom_id(minister) %>
-      <%= label_tag dom_id(minister), minister.email %><br>
+      <%= label_tag dom_id(minister), minister.name %><br>
     <% end %>
   </div>
   <input type="button" name="previous" class="previous action-button" value="Previous" />

@@ -33,8 +33,16 @@ p, div {
 // a:hover {
 //   color: $red-dark;
 // }
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body{
   background-color: #F8F8F8;
+  /* Margin bottom by footer height */
+  margin-bottom: 90px;
 }
 
 
@@ -271,4 +279,19 @@ float: right;
   background-color: $red-light;
   color: #fff;
   font-weight: 300;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #fff;
+  p { margin-top: 10px; }
+}
+
+.new-post {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }

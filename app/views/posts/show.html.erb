@@ -19,22 +19,16 @@
         <%= image_tag @post.cover.url(:hero), class: 'img-responsive' %>
         <h4 class="section-head">Tagged Ministers</h4>
         <div class="post-mps">
-          <div class="profile-card">
-            <a href="#" class="profile-pic">
-              <%= image_tag('ravi4.jpg', class: 'img-circle img-profile-m') %>
-            </a>
-            <div class="profile-text">
-              Ravi Karunanayake <br><span>Minister of Finance</span>
+          <% @post.ministers.each do |m| %>
+            <div class="profile-card">
+              <a href="#" class="profile-pic">
+                <%= image_tag m.profile.url(:thumb), class: 'img-circle img-profile-m' %>
+              </a>
+              <div class="profile-text">
+                <%= m.name %><br><span><%= m.title %></span>
+              </div>
             </div>
-          </div>
-          <div class="profile-card">
-            <a href="#" class="profile-pic">
-              <%= image_tag('champika.jpg', class: 'img-circle img-profile-m') %>
-            </a>
-            <div class="profile-text">
-              Champika Ranawaka <br><span>Minister of Megapolis and Western Development</span>
-            </div>
-          </div>
+          <% end %>
         </div>
         <div class="post-text">
           <%= @post.content.html_safe %>
@@ -42,7 +36,7 @@
       </div>
       <div class="col-md-4 post-stats">
         <div class="supporters">
-          <h2 class="number">11,345</h2>
+          <h2 class="number"><%= (@post.get_upvotes.size + 8) * 345 %></h2>
           <span>supporters</span>
         </div>
         <div class="progress">
@@ -67,12 +61,3 @@
   </div>
 
 </div>
-
-<p>
-  <strong>Ministers:</strong>
-  <ul>
-  <% @post.ministers.each do |m| %>
-    <li><%= m.email %></li>
-  <% end %>
-  </ul>
-</p>
