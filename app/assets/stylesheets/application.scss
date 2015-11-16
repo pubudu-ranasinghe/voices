@@ -16,7 +16,7 @@
  */
 
  //overriding bootstrap font
- $font-family-sans-serif: 'Open Sans', sans-serif;
+ $font-family-sans-serif: 'Work Sans', sans-serif;
  $font-family-serif: 'Merriweather', serif;
  $btn-border-radius-base: 2px;
  $btn-border-radius-large: 2px;
@@ -26,7 +26,7 @@
  $brand-info:                #5bc0de !default;
  $brand-warning:             #f0ad4e !default;
  $brand-danger:              #d9534f !default;
- 
+
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "custom";

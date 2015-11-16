@@ -1,7 +1,8 @@
-$font-display: 'Merriweather', serif;
-$font-body: 'Open Sans', sans-serif;
-$font-black: #222;
+$font-serif: 'Merriweather', serif;
+$font-sans: 'Work Sans', sans-serif;
+$font-black: #2d3238;
 $font-grey: #6C6F73;
+$font-light-grey: #bec8ce;
 $red: #D32F2F;
 $red-dark: #C12E1E;
 $red-light: #E04E3E;
@@ -168,4 +169,106 @@ float: right;
 }
 .trix-editor{
    min-height: 250px;
+}
+
+.post {
+  background-color: #fff;
+  .post-header {
+
+    padding-top: 10px;
+    padding-bottom: 50px;
+
+    .post-title {
+      font-weight: 500;
+      line-height: 1.2;
+      color: $font-black;
+      letter-spacing: -0.02em;
+      font-size: 3em;
+    }
+    .post-header-meta {
+      letter-spacing: .15em;
+      color: $font-light-grey;
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+  }
+  .post-body {
+    .post-text {
+      padding: 20px 0;
+      font-size: 19px;
+      font-weight: 300;
+      line-height: 1.6;
+      letter-spacing: -0.02em;
+      color: $font-grey;
+    }
+    .post-mps {
+      // padding-top: 20px;
+      padding-bottom: 20px;
+      display: flex;
+    }
+    .section-head { margin: 30px 0; }
+
+    .post-stats {
+      .supporters {
+        padding: 20px;
+        .number {
+          margin-top: 0;
+          margin-bottom: 0;
+          font-size: 2.5em;
+        }
+        span {
+          font-size: 85%;
+          letter-spacing: .15em;
+          color: #a9aebd;
+          text-transform: uppercase;
+        }
+      }
+      .vote {
+        display: flex;
+        i { padding-right: 5px; }
+        .btn { margin-right: 10px; }
+      }
+    }
+  }
+}
+
+.profile-card {
+  margin-right: 20px;
+  .profile-pic {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .profile-text {
+    display: table-cell;
+    vertical-align: middle;
+    font-weight: 300;
+    span {
+      color: $font-light-grey;
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+  }
+}
+
+.img-profile-s {
+  width: 25px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.img-profile-m {
+  width: 48px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.site-notice {
+  padding: 15px 20px;
+  text-align: center;
+  background-color: $red-light;
+  color: #fff;
+  font-weight: 300;
 }
