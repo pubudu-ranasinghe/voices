@@ -20,12 +20,7 @@ test:
   database: voices1_test
 
 production:
-  adapter: sqlite3
-  encoding: unicode
-  pool: 5
-  host: localhost
-  username: rails
-  password: <%= ENV['APP_DATABASE_PASSWORD'] %>
+  <<: *default
   database: voices1_production
   username: rails
   password: <%= ENV['APP_DATABASE_PASSWORD'] %>
